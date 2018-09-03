@@ -1,0 +1,38 @@
+<tokens>
+        <address>R0</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>M</C-component>
+        <address>R1</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>D-M</C-component>
+        <address>OUTPUT_FIRST</address>
+        <C-component>D</C-component>
+        <semi>;</semi>
+        <C-component>JGT</C-component>
+        <address>R1</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>M</C-component>
+        <address>OUTPUT_D</address>
+        <C-component>0</C-component>
+        <semi>;</semi>
+        <C-component>JMP</C-component>
+        <label>OUTPUT_FIRST</label>
+        <address>R0</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>M</C-component>
+        <label>OUTPUT_D</label>
+        <address>R2</address>
+        <C-component>M</C-component>
+        <equals>=</equals>
+        <C-component>D</C-component>
+        <label>INFINITE_LOOP</label>
+        <address>INFINITE_LOOP</address>
+        <C-component>0</C-component>
+        <semi>;</semi>
+        <C-component>JMP</C-component>
+</tokens>
+Number of tokens read: 35

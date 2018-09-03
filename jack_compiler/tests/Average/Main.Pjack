@@ -1,0 +1,32 @@
+    1 -- class Main
+    2 1- {
+    3 --     function void main()
+    4 2-     {
+    5 --         var Array a ;
+    6 --         var int i ;
+    7 --         var int length ;
+    8 --         var int sum ;
+    9 -- 
+   10 --         let length = Keyboard.readInt("How many numbers? ") ;
+   11 --         let a = Array.new(length) ;
+   12 --         let i = 0 ;
+   13 --         while (i < length)
+   14 3-         {
+   15 --             let a[i] = Keyboard.readInt("Enter the next number: ") ;
+   16 --             let i = i + 1 ;
+   17 -3         }
+   18 -- 
+   19 --         let i = 0 ;
+   20 --         let sum = 0 ;
+   21 --         while (i < length)
+   22 3-         {
+   23 --             let sum = sum + a[i] ;
+   24 --             let i = i + 1 ;
+   25 -3         }
+   26 -- 
+   27 --         do Output.printString("The average is: ") ;
+   28 --         do Output.printInt(sum / length) ;
+   29 --         do Output.println() ;
+   30 --         return ;
+   31 -2     }
+   32 -1 }

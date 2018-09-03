@@ -1,0 +1,35 @@
+<tokens>
+        <address>0</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>M</C-component>
+        <address>1</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>D-M</C-component>
+        <address>10</address>
+        <C-component>D</C-component>
+        <semi>;</semi>
+        <C-component>JGT</C-component>
+        <address>1</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>M</C-component>
+        <address>12</address>
+        <C-component>0</C-component>
+        <semi>;</semi>
+        <C-component>JMP</C-component>
+        <address>0</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>M</C-component>
+        <address>2</address>
+        <C-component>M</C-component>
+        <equals>=</equals>
+        <C-component>D</C-component>
+        <address>14</address>
+        <C-component>0</C-component>
+        <semi>;</semi>
+        <C-component>JMP</C-component>
+</tokens>
+Number of tokens read: 32

@@ -1,0 +1,141 @@
+    1 -- class PongGame
+    2 1- {
+    3 --     static PongGame instance ;
+    4 --     field Ball ball ;
+    5 --     field Bat bat ;
+    6 --     field int batWidth ;
+    7 --     field boolean exit ;
+    8 --     field int lastWall ;
+    9 --     field int score ;
+   10 --     field int wall ;
+   11 -- 
+   12 --     constructor PongGame new()
+   13 2-     {
+   14 --         do Screen.clearScreen() ;
+   15 --         let batWidth = 50 ;
+   16 --         let bat = Bat.new(230,229,batWidth,7) ;
+   17 --         let ball = Ball.new(253,222,0,511,0,229) ;
+   18 --         do ball.setDestination(400,0) ;
+   19 --         do Screen.drawRectangle(0,238,511,240) ;
+   20 --         do Output.moveCursor(22,0) ;
+   21 --         do Output.printString("Score: 0") ;
+   22 --         let exit = false ;
+   23 --         let score = 0 ;
+   24 --         let wall = 0 ;
+   25 --         let lastWall = 0 ;
+   26 --         return this ;
+   27 -2     }
+   28 -- 
+   29 --     method void dispose()
+   30 2-     {
+   31 --         do bat.dispose() ;
+   32 --         do ball.dispose() ;
+   33 --         do Memory.deAlloc(this) ;
+   34 --         return ;
+   35 -2     }
+   36 -- 
+   37 --     function void newInstance()
+   38 2-     {
+   39 --         let instance = PongGame.new() ;
+   40 --         return ;
+   41 -2     }
+   42 -- 
+   43 --     function PongGame getInstance()
+   44 2-     {
+   45 --         return instance ;
+   46 -2     }
+   47 -- 
+   48 --     method void run()
+   49 2-     {
+   50 --         var char key ;
+   51 -- 
+   52 --         while (~exit)
+   53 3-         {
+   54 --             while ((key = 0) & (~exit))
+   55 4-             {
+   56 --                 let key = Keyboard.keyPressed() ;
+   57 --                 do bat.move() ;
+   58 --                 do moveBall() ;
+   59 -4             }
+   60 -- 
+   61 --             if (key = 130)
+   62 4-             {
+   63 --                 do bat.setDirection(1) ;
+   64 -4             } else
+   65 4-             {
+   66 --                 if (key = 132)
+   67 5-                 {
+   68 --                     do bat.setDirection(2) ;
+   69 -5                 } else
+   70 5-                 {
+   71 --                     if (key = 140)
+   72 6-                     {
+   73 --                         let exit = true ;
+   74 -6                     }
+   75 -5                 }
+   76 -4             }
+   77 -- 
+   78 --             while ((~(key = 0)) & (~exit))
+   79 4-             {
+   80 --                 let key = Keyboard.keyPressed() ;
+   81 --                 do bat.move() ;
+   82 --                 do moveBall() ;
+   83 -4             }
+   84 -3         }
+   85 -- 
+   86 --         if (exit)
+   87 3-         {
+   88 --             do Output.moveCursor(10,27) ;
+   89 --             do Output.printString("Game Over") ;
+   90 -3         }
+   91 -- 
+   92 --         return ;
+   93 -2     }
+   94 -- 
+   95 --     method void moveBall()
+   96 2-     {
+   97 --         var int ballLeft ;
+   98 --         var int ballRight ;
+   99 --         var int batLeft ;
+  100 --         var int batRight ;
+  101 --         var int bouncingDirection ;
+  102 -- 
+  103 --         let wall = ball.move() ;
+  104 --         if ((wall > 0) & (~(wall = lastWall)))
+  105 3-         {
+  106 --             let lastWall = wall ;
+  107 --             let bouncingDirection = 0 ;
+  108 --             let batLeft = bat.getLeft() ;
+  109 --             let batRight = bat.getRight() ;
+  110 --             let ballLeft = ball.getLeft() ;
+  111 --             let ballRight = ball.getRight() ;
+  112 --             if (wall = 4)
+  113 4-             {
+  114 --                 let exit =(batLeft > ballRight) | (batRight < ballLeft) ;
+  115 --                 if (~exit)
+  116 5-                 {
+  117 --                     if (ballRight < (batLeft + 10))
+  118 6-                     {
+  119 --                         let bouncingDirection = -1 ;
+  120 -6                     } else
+  121 6-                     {
+  122 --                         if (ballLeft > (batRight - 10))
+  123 7-                         {
+  124 --                             let bouncingDirection = 1 ;
+  125 -7                         }
+  126 -6                     }
+  127 -- 
+  128 --                     let batWidth = batWidth - 2 ;
+  129 --                     do bat.setWidth(batWidth) ;
+  130 --                     let score = score + 1 ;
+  131 --                     do Output.moveCursor(22,7) ;
+  132 --                     do Output.printInt(score) ;
+  133 -5                 }
+  134 -4             }
+  135 -- 
+  136 --             do ball.bounce(bouncingDirection) ;
+  137 -3         }
+  138 -- 
+  139 --         return ;
+  140 -2     }
+  141 -1 }

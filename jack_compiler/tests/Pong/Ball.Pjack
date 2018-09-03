@@ -1,0 +1,231 @@
+    1 -- class Ball
+    2 1- {
+    3 --     field int bottomWall ;
+    4 --     field int d ;
+    5 --     field int diagonalD ;
+    6 --     field boolean invert ;
+    7 --     field int leftWall ;
+    8 --     field int lengthx ;
+    9 --     field int lengthy ;
+   10 --     field boolean positivex ;
+   11 --     field boolean positivey ;
+   12 --     field int rightWall ;
+   13 --     field int straightD ;
+   14 --     field int topWall ;
+   15 --     field int wall ;
+   16 --     field int x ;
+   17 --     field int y ;
+   18 -- 
+   19 --     constructor Ball new(int Ax,int Ay,int AleftWall,int ArightWall,int AtopWall,int AbottomWall)
+   20 2-     {
+   21 --         let x = Ax ;
+   22 --         let y = Ay ;
+   23 --         let leftWall = AleftWall ;
+   24 --         let rightWall = ArightWall - 6 ;
+   25 --         let topWall = AtopWall ;
+   26 --         let bottomWall = AbottomWall - 6 ;
+   27 --         let wall = 0 ;
+   28 --         do show() ;
+   29 --         return this ;
+   30 -2     }
+   31 -- 
+   32 --     method void dispose()
+   33 2-     {
+   34 --         do Memory.deAlloc(this) ;
+   35 --         return ;
+   36 -2     }
+   37 -- 
+   38 --     method void show()
+   39 2-     {
+   40 --         do Screen.setColor(true) ;
+   41 --         do draw() ;
+   42 --         return ;
+   43 -2     }
+   44 -- 
+   45 --     method void hide()
+   46 2-     {
+   47 --         do Screen.setColor(false) ;
+   48 --         do draw() ;
+   49 --         return ;
+   50 -2     }
+   51 -- 
+   52 --     method void draw()
+   53 2-     {
+   54 --         do Screen.drawRectangle(x,y,x + 5,y + 5) ;
+   55 --         return ;
+   56 -2     }
+   57 -- 
+   58 --     method int getLeft()
+   59 2-     {
+   60 --         return x ;
+   61 -2     }
+   62 -- 
+   63 --     method int getRight()
+   64 2-     {
+   65 --         return x + 5 ;
+   66 -2     }
+   67 -- 
+   68 --     method void setDestination(int destx,int desty)
+   69 2-     {
+   70 --         var int dx ;
+   71 --         var int dy ;
+   72 --         var int temp ;
+   73 -- 
+   74 --         let lengthx = destx - x ;
+   75 --         let lengthy = desty - y ;
+   76 --         let dx = Math.abs(lengthx) ;
+   77 --         let dy = Math.abs(lengthy) ;
+   78 --         let invert =(dx < dy) ;
+   79 --         if (invert)
+   80 3-         {
+   81 --             let temp = dx ;
+   82 --             let dx = dy ;
+   83 --             let dy = temp ;
+   84 --             let positivex =(y < desty) ;
+   85 --             let positivey =(x < destx) ;
+   86 -3         } else
+   87 3-         {
+   88 --             let positivex =(x < destx) ;
+   89 --             let positivey =(y < desty) ;
+   90 -3         }
+   91 -- 
+   92 --         let d =(2 * dy) - dx ;
+   93 --         let straightD = 2 * dy ;
+   94 --         let diagonalD = 2 * (dy - dx) ;
+   95 --         return ;
+   96 -2     }
+   97 -- 
+   98 --     method int move()
+   99 2-     {
+  100 --         do hide() ;
+  101 --         if (d < 0)
+  102 3-         {
+  103 --             let d = d + straightD ;
+  104 -3         } else
+  105 3-         {
+  106 --             let d = d + diagonalD ;
+  107 --             if (positivey)
+  108 4-             {
+  109 --                 if (invert)
+  110 5-                 {
+  111 --                     let x = x + 4 ;
+  112 -5                 } else
+  113 5-                 {
+  114 --                     let y = y + 4 ;
+  115 -5                 }
+  116 -4             } else
+  117 4-             {
+  118 --                 if (invert)
+  119 5-                 {
+  120 --                     let x = x - 4 ;
+  121 -5                 } else
+  122 5-                 {
+  123 --                     let y = y - 4 ;
+  124 -5                 }
+  125 -4             }
+  126 -3         }
+  127 -- 
+  128 --         if (positivex)
+  129 3-         {
+  130 --             if (invert)
+  131 4-             {
+  132 --                 let y = y + 4 ;
+  133 -4             } else
+  134 4-             {
+  135 --                 let x = x + 4 ;
+  136 -4             }
+  137 -3         } else
+  138 3-         {
+  139 --             if (invert)
+  140 4-             {
+  141 --                 let y = y - 4 ;
+  142 -4             } else
+  143 4-             {
+  144 --                 let x = x - 4 ;
+  145 -4             }
+  146 -3         }
+  147 -- 
+  148 --         if (~(x > leftWall))
+  149 3-         {
+  150 --             let wall = 1 ;
+  151 --             let x = leftWall ;
+  152 -3         }
+  153 -- 
+  154 --         if (~(x < rightWall))
+  155 3-         {
+  156 --             let wall = 2 ;
+  157 --             let x = rightWall ;
+  158 -3         }
+  159 -- 
+  160 --         if (~(y > topWall))
+  161 3-         {
+  162 --             let wall = 3 ;
+  163 --             let y = topWall ;
+  164 -3         }
+  165 -- 
+  166 --         if (~(y < bottomWall))
+  167 3-         {
+  168 --             let wall = 4 ;
+  169 --             let y = bottomWall ;
+  170 -3         }
+  171 -- 
+  172 --         do show() ;
+  173 --         return wall ;
+  174 -2     }
+  175 -- 
+  176 --     method void bounce(int bouncingDirection)
+  177 2-     {
+  178 --         var int divLengthx ;
+  179 --         var int divLengthy ;
+  180 --         var int factor ;
+  181 --         var int newx ;
+  182 --         var int newy ;
+  183 -- 
+  184 --         let divLengthx = lengthx / 10 ;
+  185 --         let divLengthy = lengthy / 10 ;
+  186 --         if (bouncingDirection = 0)
+  187 3-         {
+  188 --             let factor = 10 ;
+  189 -3         } else
+  190 3-         {
+  191 --             if (((~(lengthx < 0)) & (bouncingDirection = 1)) | ((lengthx < 0) & (bouncingDirection = (-1))))
+  192 4-             {
+  193 --                 let factor = 20 ;
+  194 -4             } else
+  195 4-             {
+  196 --                 let factor = 5 ;
+  197 -4             }
+  198 -3         }
+  199 -- 
+  200 --         if (wall = 1)
+  201 3-         {
+  202 --             let newx = 506 ;
+  203 --             let newy =(divLengthy * (-50)) / divLengthx ;
+  204 --             let newy = y + (newy * factor) ;
+  205 -3         } else
+  206 3-         {
+  207 --             if (wall = 2)
+  208 4-             {
+  209 --                 let newx = 0 ;
+  210 --                 let newy =(divLengthy * 50) / divLengthx ;
+  211 --                 let newy = y + (newy * factor) ;
+  212 -4             } else
+  213 4-             {
+  214 --                 if (wall = 3)
+  215 5-                 {
+  216 --                     let newy = 250 ;
+  217 --                     let newx =(divLengthx * (-25)) / divLengthy ;
+  218 --                     let newx = x + (newx * factor) ;
+  219 -5                 } else
+  220 5-                 {
+  221 --                     let newy = 0 ;
+  222 --                     let newx =(divLengthx * 25) / divLengthy ;
+  223 --                     let newx = x + (newx * factor) ;
+  224 -5                 }
+  225 -4             }
+  226 -3         }
+  227 -- 
+  228 --         do setDestination(newx,newy) ;
+  229 --         return ;
+  230 -2     }
+  231 -1 }

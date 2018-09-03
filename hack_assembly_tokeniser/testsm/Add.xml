@@ -1,0 +1,15 @@
+<tokens>
+        <address>2</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>A</C-component>
+        <address>3</address>
+        <C-component>D</C-component>
+        <equals>=</equals>
+        <C-component>D+A</C-component>
+        <address>0</address>
+        <C-component>M</C-component>
+        <equals>=</equals>
+        <C-component>D</C-component>
+</tokens>
+Number of tokens read: 12

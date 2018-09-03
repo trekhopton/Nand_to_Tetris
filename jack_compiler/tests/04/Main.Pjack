@@ -1,0 +1,21 @@
+    1 -- class Main
+    2 1- {
+    3 --     function void main()
+    4 2-     {
+    5 --         while (true)
+    6 3-         {
+    7 --             while (false)
+    8 4-             {
+    9 -4             }
+   10 -3         }
+   11 -- 
+   12 --         while (false)
+   13 3-         {
+   14 --             while (true)
+   15 4-             {
+   16 -4             }
+   17 -3         }
+   18 -- 
+   19 --         return ;
+   20 -2     }
+   21 -1 }

@@ -1,0 +1,13 @@
+    1 -- class Main
+    2 1- {
+    3 --     function void main()
+    4 2-     {
+    5 --         var PongGame game ;
+    6 -- 
+    7 --         do PongGame.newInstance() ;
+    8 --         let game = PongGame.getInstance() ;
+    9 --         do game.run() ;
+   10 --         do game.dispose() ;
+   11 --         return ;
+   12 -2     }
+   13 -1 }

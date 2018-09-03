@@ -1,0 +1,104 @@
+    1 -- class SquareGame
+    2 1- {
+    3 --     field int direction ;
+    4 --     field Square square ;
+    5 -- 
+    6 --     constructor SquareGame new()
+    7 2-     {
+    8 --         let square = Square.new(0,0,30) ;
+    9 --         let direction = 0 ;
+   10 --         return this ;
+   11 -2     }
+   12 -- 
+   13 --     method void dispose()
+   14 2-     {
+   15 --         do square.dispose() ;
+   16 --         do Memory.deAlloc(this) ;
+   17 --         return ;
+   18 -2     }
+   19 -- 
+   20 --     method void run()
+   21 2-     {
+   22 --         var boolean exit ;
+   23 --         var char key ;
+   24 -- 
+   25 --         let exit = false ;
+   26 --         while (~exit)
+   27 3-         {
+   28 --             while (key = 0)
+   29 4-             {
+   30 --                 let key = Keyboard.keyPressed() ;
+   31 --                 do moveSquare() ;
+   32 -4             }
+   33 -- 
+   34 --             if (key = 81)
+   35 4-             {
+   36 --                 let exit = true ;
+   37 -4             }
+   38 -- 
+   39 --             if (key = 90)
+   40 4-             {
+   41 --                 do square.decSize() ;
+   42 -4             }
+   43 -- 
+   44 --             if (key = 88)
+   45 4-             {
+   46 --                 do square.incSize() ;
+   47 -4             }
+   48 -- 
+   49 --             if (key = 131)
+   50 4-             {
+   51 --                 let direction = 1 ;
+   52 -4             }
+   53 -- 
+   54 --             if (key = 133)
+   55 4-             {
+   56 --                 let direction = 2 ;
+   57 -4             }
+   58 -- 
+   59 --             if (key = 130)
+   60 4-             {
+   61 --                 let direction = 3 ;
+   62 -4             }
+   63 -- 
+   64 --             if (key = 132)
+   65 4-             {
+   66 --                 let direction = 4 ;
+   67 -4             }
+   68 -- 
+   69 --             while (~(key = 0))
+   70 4-             {
+   71 --                 let key = Keyboard.keyPressed() ;
+   72 --                 do moveSquare() ;
+   73 -4             }
+   74 -3         }
+   75 -- 
+   76 --         return ;
+   77 -2     }
+   78 -- 
+   79 --     method void moveSquare()
+   80 2-     {
+   81 --         if (direction = 1)
+   82 3-         {
+   83 --             do square.moveUp() ;
+   84 -3         }
+   85 -- 
+   86 --         if (direction = 2)
+   87 3-         {
+   88 --             do square.moveDown() ;
+   89 -3         }
+   90 -- 
+   91 --         if (direction = 3)
+   92 3-         {
+   93 --             do square.moveLeft() ;
+   94 -3         }
+   95 -- 
+   96 --         if (direction = 4)
+   97 3-         {
+   98 --             do square.moveRight() ;
+   99 -3         }
+  100 -- 
+  101 --         do Sys.wait(5) ;
+  102 --         return ;
+  103 -2     }
+  104 -1 }
